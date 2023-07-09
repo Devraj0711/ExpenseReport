@@ -20,7 +20,13 @@ function onSubmit(e) {
   localStorage.setItem(Exp_des.value, MyObj);
   showOnScreen(myobj);
 }
-
+axios.post("https://crudcrud.com/api/3b2c6ad801d94e1286a220bd17944246/appointData", myobj)
+.then((response) => {
+  console.log(response)
+})
+.catch((err) =>{
+  console.log(err)
+})
 function showOnScreen(myobj) {
   const parentElement = document.getElementById("listOfExpenses");
   const childElement = document.createElement('li');
